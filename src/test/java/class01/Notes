@@ -1,0 +1,141 @@
+TestNG:
+is a testing tool that helps us to structure our test cases using different annotations
+
+Benefits of testNG:
+1.Reports
+2.Annotations  e.g @Test, @before ,@beforeclass
+3.parallel testing
+4.batch execution
+5.Assertions--> Hard Assertions , SoftAssertions
+6.Data Parameterization
+
+it can be integrated with cucumber , maven and selenium.
+
+
+
+1.Annotations:
+we donot need any main method
+
+annotation is a tag that provides additional inforamtion about class, interface or method in testNG
+anotation are used to keep the strucutre of test cases
+
+@Test
+@BeforeMethod
+@AfterMethod
+@BeforeClass
+@AfterClass
+
+
+1.@Test
+You should write your test cases under this annotation.
+This is the main annotation in testNG
+By default testNG excutes the methods in alphabetical order.
+
+
+2.@BeforeMethod:
+runs every time before the @test is executed
+also called precondition
+
+3.@AfterMethod:
+runs after each @test Method
+also called post condition
+
+
+before method is preconditon that must run before every test case and the post conditon will run after
+the test case has ended
+
+priority:
+by deafault the priority is zero of all the test case
+in order to give them a priority order
+use @Test(priority =1)
+
+
+Enabled:
+@Test(enabled=false)--> will not run the test cases that are set false
+by deafult all test cases are set to enabled=true
+
+DependsOn:
+
+@Test(dependsOnMethods = "methodName")
+will only run if the dependent method has passed successfully else it will be skipped
+
+
+
+
+HardAssertions:
+we have hardAssertions in testNG
+in order to use the assertion we use
+
+Assert.assertiontype()
+
+1.Assert.Assertequals(String1, String2);
+it passes if String1 equals String2
+if fails if String1 doesnot equals to string2
+
+2.Assert.Asserttrue(boolean variable);
+check the state of a boolean variable
+it passes if the boolean is TRUE
+it fails if the boolean is False
+
+
+In hard aseertions if we have multiple assertions
+as soon as one of them fails it quits checking other assertions and declared the test case has failed
+
+
+SoftAssertions:
+soft assertion continue to check all the assertions regardless of the fact even if one or more assertions
+have failed, which is not the scenario in case of HArd Assertions (they stop execution when even one assertion fails).
+
+in order to use soft assertion
+1.declaration
+
+SoftAssert soft =new SoftAssert();
+
+2.soft.AssertEquals(string, string)  instead of Asser.AssertEquals(string,string)
+
+at the end u must do
+
+3.soft.Assertall().
+
+
+
+
+
+After the declaration when u use soft.assert it just checks the assertion but does not take any action or display any output.
+once tall the assertions are done
+then u use soft.Assertall()
+to compile the result of all the assertion and show you the results on screen.
+
+
+
+
+
+how to create a git repo
+
+1.navigate to the location where ur project is.
+2.Decide where to create the repo
+NO SUBREPOSITORIES-->please :)
+
+3.initalize the repo using     git init
+
+4. git add .
+5. git commit -m "message"
+
+
+
+
+remote repo
+warnings:
+one local repo must have only one remote repo
+
+1.git remote -v  (check if the connection is there or not)
+2.git remote add origin URL
+3.git branch -M main
+
+for a new repo
+all these above steps u only need to don once never again
+
+git push -u origin main  (first time)
+git push   (after the first time)
+
+
